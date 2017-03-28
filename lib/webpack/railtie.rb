@@ -34,7 +34,7 @@ module Webpack
     # Below will default to 'true' in 1.0 release
     config.webpack.dev_server.https_verify_peer = false
     config.webpack.dev_server.binary = 'node_modules/.bin/webpack-dev-server'
-    config.webpack.dev_server.enabled = ::Rails.env.development? || ::Rails.env.test?
+    config.webpack.dev_server.enabled = ENV['USE_WEBPACK_DEV_SERVER']
 
     config.webpack.output_dir = "public/webpack"
     config.webpack.public_path = "webpack"
